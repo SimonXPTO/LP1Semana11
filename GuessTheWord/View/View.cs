@@ -9,18 +9,13 @@ public class View
 
     public void ShowHint(string hint)
     {
-        if (string.IsNullOrEmpty(hint) || hint.Length < 2)
-        {
-            Console.WriteLine("Hint: Not enough letters to show a hint.");
-            return;
-        }
-        string masked = hint[0] + new string('*', hint.Length - 2) + hint[hint.Length - 1];
+        string masked = hint[0] + new string('_', hint.Length - 2) + hint[hint.Length - 1];
         Console.WriteLine($"Hint: {masked}");
     }
 
     public void ShowWord(char[] display)
     {
-        Console.WriteLine("Word: " + display);
+        Console.WriteLine("Word: " + new string(display));
     }
 
     public string GetGuess()

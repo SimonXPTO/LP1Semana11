@@ -19,8 +19,9 @@ namespace GuessTheWord
             string chosenWord = _model.ChosenWord;
             do
             {
-                _view.ShowHint(_model.Display);
+                _view.ShowWelcome();
                 _view.ShowHint(_model.Hint);
+                _view.ShowWord(_model.Display);
                 guess = _view.GetGuess();
 
                 _view.ShowResult(guess, _model.ChosenWord);
